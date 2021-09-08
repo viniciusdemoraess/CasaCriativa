@@ -9,10 +9,21 @@
             <p>{{idea.category}}</p>
             <div class="description">
                 {{idea.description}}
-        </div>
 
+            </div>
+            
             <a href="{{idea.link}}" target="_blank">Ir para a Ideia</a>
+            
         </div>
 
+        <form 
+        method="post" 
+        action="/ideias/{{idea.id}}" 
+        >
+        <button class="button-delete">Deletar</button>  
+
+        </form>
+        
     </div>
-{% endfor %}
+    
+   {% endfor %}

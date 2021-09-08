@@ -37,4 +37,21 @@ function checkFields(event){
         alert(`Por favor, preencha todos os campos!`)
     }
 }
+/*
+function deleteIdea(stId){
+    
+    console.log(stId)
+    const id = parseInt(stId) 
 
+    const query = `DELETE FROM ideas WHERE id = ?`
+
+    const value = [id]
+
+    db.run(query, value, function (err){
+        if (err) return console.error(err)
+
+        console.log("DELETADO", this)
+    })
+    
+
+}*/

@@ -105,9 +105,6 @@ button:hover{
     text-decoration: underline;
 }
 
-
-
-
 footer{
     text-align: center; 
     
@@ -131,12 +128,14 @@ footer a{
     border-radius: 8px;
     padding: 32px;
     margin-bottom: 32px;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .idea img{
     width: 60px;
     height: 60px;
-
+    border-radius: 6px;
     margin-right: 32px;
 }
 
@@ -151,8 +150,24 @@ footer a{
 }
 
 .idea .description{
-    margin: 16px 0;
+    margin: 16px 0;  
+    max-width: 200px;
+    min-width: 190px;
 }
+
+.idea form .button-delete{
+   margin: 0;
+   color: #ff5e84;
+   background-color: white;
+   text-decoration: none;
+   
+}
+
+.idea form .button-delete:hover{
+    color: black;
+    text-decoration: none;
+    
+ }
 
 /* modal */
 

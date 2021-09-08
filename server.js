@@ -4,11 +4,11 @@ const server = express()
 
 const db = require("./db")
 
+
 //configurar arquivos estaticos 
 server.use(express.static("public"))
 
 //habilitar uso do req.body
-
 server.use(express.urlencoded({ extended: true }))
 
 //configuração do nunjucks
@@ -58,7 +58,6 @@ server.get("/ideias", function (req, res) {
 
 
 server.post('/', function (req, res) {
-
     //Inserir dado na tabela
     const query = `
         INSERT INTO ideas(
@@ -69,7 +68,6 @@ server.post('/', function (req, res) {
             link
         ) VALUES (?, ?, ?, ?, ?);
     `
-
     const values = [
         req.body.image, 
         req.body.title,         
@@ -87,6 +85,21 @@ server.post('/', function (req, res) {
 
         return res.redirect("/ideias")
     })
+})
+
+
+server.post("/ideias/:id", (req, res) =>{
+    
+    const id = req.params.id 
+    console.log(id)
+   
+    db.run(`DELETE FROM ideas WHERE id = ?`, [id], function (err){
+        if (err) return console.error(err)
+
+        console.log("DELETADO", this)
+    })
+
+    return res.redirect("/")
 })
 
 
